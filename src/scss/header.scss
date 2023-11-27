@@ -1,0 +1,163 @@
+//====================================================================================================
+
+.header {
+   &__container {
+      @include adaptiveValue("padding-left", 45, 10);
+      @include adaptiveValue("padding-right", 45, 10);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include adaptiveValue("min-height",128 ,64 );
+      position: relative;
+      &::after {
+         content: "";
+         width: 100%;
+         height: toRem(1);
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         background-color: #cbcbcb;
+      }
+   }
+
+   &__body {
+      display: flex;
+      align-items: center;
+      gap: toRem(15);
+      @include adaptiveValue("gap", 16, 5);
+   }
+
+   &__logo {
+      
+         @include adaptiveValue("width",40 ,30 );
+         @include adaptiveValue("height",40 ,30 );
+      
+   }
+
+   &__heading {
+      @include adaptiveValue("font-size", 20, 16);
+      font-weight: 700;
+      text-transform: uppercase;
+      span {
+         color: #9d9d9d;
+         text-transform: none;
+         font-weight: 400;
+         font-size: toRem(14);
+         @include adaptiveValue("font-size",14 ,10 );
+      }
+   }
+
+   &__menu {
+   }
+}
+.menu {
+   &__icon {
+   }
+
+   &__body {
+   }
+
+   &__list {
+      display: flex;
+      align-items: center;
+      column-gap: toRem(32);
+      @include adaptiveValue("column-gap", 48, 32, 0, $containerWidth, 768);
+   }
+
+   &__item {
+      position: relative;
+      &:hover{
+         .menu__link, &::before{
+            color: #000;
+         }
+      }
+      &::before{
+         @extend %ic;
+         display: block;
+         position: absolute;
+         top: 50%;
+         left: -20px;
+         transform: translate(0,-50%);
+         color: #9B9B9B;
+         transition: all 0.3s;
+      }
+   }
+
+   &__cart {
+      &::before{
+         content:'\e901';
+      }
+   }
+
+   &__link {
+      color: #9B9B9B;
+      transition: all 0.3s;
+   }
+
+   &__favorite {
+      &::before{
+         content:'\e904';
+      }
+   }
+
+   &__profile {
+      &::before{
+         content:'\e907';
+      }
+   }
+}
+
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
