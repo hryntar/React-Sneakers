@@ -1,0 +1,78 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": "../../img/products/sneakers-01.jpg",
+      "title": "Nike Blazer Mid Suede",
+      "price": "3599"
+    },
+    {
+      "id": 2,
+      "image": "../../img/products/sneakers-02.jpg",
+      "title": "Nike Air Max 270",
+      "price": "4299"
+    },
+    {
+      "id": 3,
+      "image": "../../img/products/sneakers-03.jpg",
+      "title": "Nike Blazer Mid Suede",
+      "price": "3599"
+    },
+    {
+      "id": 4,
+      "image": "../../img/products/sneakers-04.jpg",
+      "title": "Puma X Aka Boku Future Rider",
+      "price": "3800"
+    },
+    {
+      "id": 5,
+      "image": "../../img/products/sneakers-05.jpg",
+      "title": "Under Armour Curry 8",
+      "price": "3999"
+    },
+    {
+      "id": 6,
+      "image": "../../img/products/sneakers-06.jpg",
+      "title": "Nike Kyrie 7",
+      "price": "4199"
+    },
+    {
+      "id": 7,
+      "image": "../../img/products/sneakers-07.jpg",
+      "title": "Jordan Air Jordan 11",
+      "price": "5499"
+    },
+    {
+      "id": 8,
+      "image": "../../img/products/sneakers-08.jpg",
+      "title": "Nike LeBron XVIII",
+      "price": "5799"
+    },
+    {
+      "id": 9,
+      "image": "../../img/products/sneakers-09.jpg",
+      "title": "Nike Lebron XVIII Low",
+      "price": "6299"
+    },
+    {
+      "id": 10,
+      "image": "../../img/products/sneakers-01.jpg",
+      "title": "Nike Blazer Mid Suede",
+      "price": "3599"
+    },
+    {
+      "id": 11,
+      "image": "../../img/products/sneakers-04.jpg",
+      "title": "Puma X Aka Boku Future Rider",
+      "price": "3800"
+    },
+    {
+      "id": 12,
+      "image": "../../img/products/sneakers-10.jpg",
+      "title": "Nike Kyrie Flytrap IV",
+      "price": "4899"
+    }
+  ],
+  "cart": [],
+  "favorites": []
+}

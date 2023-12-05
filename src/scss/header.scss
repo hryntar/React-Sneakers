@@ -2,12 +2,12 @@
 
 .header {
    &__container {
-      @include adaptiveValue("padding-left", 45, 10);
-      @include adaptiveValue("padding-right", 45, 10);
+      padding-left: toRem(45);
+      padding-right: toRem(45);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @include adaptiveValue("min-height",128 ,64 );
+      min-height: toRem(128);
       position: relative;
       &::after {
          content: "";
@@ -24,18 +24,16 @@
       display: flex;
       align-items: center;
       gap: toRem(15);
-      @include adaptiveValue("gap", 16, 5);
    }
 
    &__logo {
-      
-         @include adaptiveValue("width",40 ,30 );
-         @include adaptiveValue("height",40 ,30 );
+         width: toRem(40);
+         height: toRem(40);
       
    }
 
    &__heading {
-      @include adaptiveValue("font-size", 20, 16);
+      font-size: toRem(20);
       font-weight: 700;
       text-transform: uppercase;
       span {
@@ -43,7 +41,7 @@
          text-transform: none;
          font-weight: 400;
          font-size: toRem(14);
-         @include adaptiveValue("font-size",14 ,10 );
+         font-size: toRem(14);
       }
    }
 
@@ -60,8 +58,7 @@
    &__list {
       display: flex;
       align-items: center;
-      column-gap: toRem(32);
-      @include adaptiveValue("column-gap", 48, 32, 0, $containerWidth, 768);
+      column-gap: toRem(48);
    }
 
    &__item {

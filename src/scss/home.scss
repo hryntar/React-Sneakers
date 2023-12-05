@@ -2,21 +2,20 @@
 
 .main {
    &__container {
-      @include adaptiveValue("padding-top", 40, 30);
-
-      @include adaptiveValue("padding-left", 45, 10);
-      @include adaptiveValue("padding-right", 45, 10);
+      padding-top: toRem(40);
+      padding-left: toRem(45);
+      padding-right: toRem(45);
    }
 
    &__header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      @include adaptiveValue("padding-bottom", 40, 20);
+      padding-bottom: toRem(40);
    }
 
    &__heading {
-      @include adaptiveValue("font-size", 32, 24);
+      font-size: toRem(32);
       font-weight: 700;
    }
 
@@ -37,7 +36,7 @@
          border: 1px solid #000;
       }
    }
-   .search__icon {
+   .search__icon-search {
       position: relative;
       &::before {
          position: absolute;
@@ -47,18 +46,28 @@
          color: #cbcbcb;
       }
    }
-
+   .search__icon-remove{
+      position: relative;
+      color: #cbcbcb;
+      transition: all 0.3s;
+      cursor: pointer;
+      &::before {
+         transform: rotate(-45deg);
+         position: absolute;
+         z-index: 1;
+         top: -25px;
+         right: 10px;
+      }
+      &:hover {
+         color: #8b8b8b;
+         border-color: #8b8b8b;
+      }
+   }
    &__items {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       margin: 0 auto;
       gap: toRem(20) toRem(10);
-      @media (max-width: $tablet) {
-         grid-template-columns: repeat(3, 1fr);
-      }
-      @media (max-width: $mobile) {
-         grid-template-columns: repeat(2, 1fr);
-      }
    }
 
    &__item {
@@ -78,6 +87,7 @@
    width: 100%;
    &:hover {
       box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.06);
+      transform: translateY(-7px);
    }
 
    &__favorite-icon {
@@ -98,6 +108,11 @@
       &:hover {
          color: #8b8b8b;
          border-color: #8b8b8b;
+      }
+      &.icon-favourite-filled{
+         color: #FF8585;
+         background-color: #FEF0F0;
+         border: 0;
       }
    }
 
@@ -139,10 +154,21 @@
       align-items: center;
       transition: all 0.3s;
       cursor: pointer;
-      &:hover {
-         color: #8b8b8b;
-         border-color: #8b8b8b;
+      &.icon-check {
+         background: linear-gradient(180deg, #89F09C 0%, #3CC755 100%);
+         border: 0;
+         color: #fff;
+         &:hover {
+            background: linear-gradient(180deg, #77c385 0%, #34a349 100%);
+         }
       }
+      &.icon-plus{
+         &:hover {
+            color: #8b8b8b;
+            border-color: #8b8b8b;
+         }
+      }
+      
    }
 }
 
@@ -167,6 +193,8 @@
    padding: toRem(30);
    display: flex;
    flex-direction: column;
+
+   transition: all 0.3s;
    &__title {
       display: flex;
       justify-content: space-between;
@@ -276,5 +304,46 @@
       }
    }
 }
-.icon-plus {
+
+.empty-cart {
+   text-align: center;
+   flex-grow: 1;
+   margin-top: 40%;
+
+   &__image {
+      margin-bottom: toRem(20);
+   }
+
+   &__title {
+      font-size: toRem(22);
+      font-weight: 700;
+      margin-bottom: toRem(9);
+   }
+
+   &__text {
+      opacity: 0.4;
+      line-height: 24px;
+      font-size: toRem(16);
+      max-width: toRem(290);
+      margin: 0 auto 40px auto;
+   }
+
+   &__btn {
+      width: 100%;
+      color: #fff;
+      background-color: #9dd458;
+      border-radius: 18px;
+      padding: toRem(18) toRem(0) toRem(18) toRem(0);
+      background-image: url("../img/icons/arrow-back.svg");
+      background-repeat: no-repeat;
+      background-position: 22% 50%;
+      transition: all 0.3s ease;
+      &:hover {
+         background-color: darken($color: #8bb952, $amount: 1%);
+         background-position: 20% 50%;
+      }
+      &:active {
+         background-color: darken($color: #8bb952, $amount: 10%);
+      }
+   }
 }
